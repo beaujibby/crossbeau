@@ -45,6 +45,14 @@
 			grid-column-gap: 10px;
 			grid-row-gap: 10px;
 		}
+
+		.answer_number {
+			position: absolute;
+			color: #ccc;
+			margin-top: 5px;
+			margin-left: 5px;
+		}
+
 		.crossword_box {
 			width: 75px;
 			height: 75px;
@@ -93,17 +101,23 @@
 			color: #ccc;
 			width: 300px;
 			height: 415px;
-			padding-left: 10px;
 			overflow-y: scroll;
+
+			scrollbar-width: none; /* Firefox hide scrollbar */
 		}
+
+		#clues::-webkit-scrollbar {
+			display: none; /* Safari and Chrome hide scrollbar */
+		}
+
 		.clue {
-			padding: 10px;
 			font-size: 15px;
 		}
 		.clue.active {
 			background: #444;
 		}
 		.clue b {
+			padding-left: 10px;
 			font-size: 25px;
 		}
 	</style>
@@ -117,45 +131,45 @@
 	</div>
 	<div id ="gamespace">
 		<div id = "crossword_board">
-			<div class = "crossword_box active selected" onclick="//pickLetter(0,0)"></div>
-			<div class = "crossword_box active" onclick="//pickLetter(1,0)"></div>
-			<div class = "crossword_box active" onclick="//pickLetter(2,0)"></div>
-			<div class = "crossword_box active" onclick="//pickLetter(3,0)"></div>
-			<div class = "crossword_box active" onclick="//pickLetter(4,0)"></div>
-			<div class = "crossword_box" onclick="//pickLetter(0,1)"></div>
-			<div class = "crossword_box" onclick="//pickLetter(1,1)"></div>
-			<div class = "crossword_box" onclick="//pickLetter(2,1)"></div>
-			<div class = "crossword_box" onclick="//pickLetter(3,1)"></div>
-			<div class = "crossword_box" onclick="//pickLetter(4,1)"></div>
-			<div class = "crossword_box" onclick="//pickLetter(0,2)"></div>
-			<div class = "crossword_box" onclick="//pickLetter(1,2)"></div>
-			<div class = "crossword_box" onclick="//pickLetter(2,2)"></div>
-			<div class = "crossword_box" onclick="//pickLetter(3,2)"></div>
-			<div class = "crossword_box" onclick="//pickLetter(4,2)"></div>
-			<div class = "crossword_box" onclick="//pickLetter(0,3)"></div>
-			<div class = "crossword_box" onclick="//pickLetter(1,3)"></div>
-			<div class = "crossword_box" onclick="//pickLetter(2,3)"></div>
-			<div class = "crossword_box" onclick="//pickLetter(3,3)"></div>
-			<div class = "crossword_box" onclick="//pickLetter(4,3)"></div>
-			<div class = "crossword_box" onclick="//pickLetter(0,4)"></div>
-			<div class = "crossword_box" onclick="//pickLetter(1,4)"></div>
-			<div class = "crossword_box" onclick="//pickLetter(2,4)"></div>
-			<div class = "crossword_box" onclick="//pickLetter(3,4)"></div>
-			<div class = "crossword_box" onclick="//pickLetter(4,4)"></div>
+			<div class = "box_wrapper"><p class = "answer_number">1.</p><div class = "crossword_box active selected" onclick="//pickLetter(0,0)"></div></div>
+			<div class = "box_wrapper"><p class = "answer_number">2.</p><div class = "crossword_box active" onclick="//pickLetter(1,0)"></div></div>
+			<div class = "box_wrapper"><p class = "answer_number">3.</p><div class = "crossword_box active" onclick="//pickLetter(2,0)"></div></div>
+			<div class = "box_wrapper"><p class = "answer_number">4.</p><div class = "crossword_box active" onclick="//pickLetter(3,0)"></div></div>
+			<div class = "box_wrapper"><p class = "answer_number">5.</p><div class = "crossword_box active" onclick="//pickLetter(4,0)"></div></div>
+			<div class = "box_wrapper"><p class = "answer_number">2.</p><div class = "crossword_box" onclick="//pickLetter(0,1)"></div></div>
+			<div class = "box_wrapper"><div class = "crossword_box" onclick="//pickLetter(1,1)"></div></div>
+			<div class = "box_wrapper"><div class = "crossword_box" onclick="//pickLetter(2,1)"></div></div>
+			<div class = "box_wrapper"><div class = "crossword_box" onclick="//pickLetter(3,1)"></div></div>
+			<div class = "box_wrapper"><div class = "crossword_box" onclick="//pickLetter(4,1)"></div></div>
+			<div class = "box_wrapper"><p class = "answer_number">3.</p><div class = "crossword_box" onclick="//pickLetter(0,2)"></div></div>
+			<div class = "box_wrapper"><div class = "crossword_box" onclick="//pickLetter(1,2)"></div></div>
+			<div class = "box_wrapper"><div class = "crossword_box" onclick="//pickLetter(2,2)"></div></div>
+			<div class = "box_wrapper"><div class = "crossword_box" onclick="//pickLetter(3,2)"></div></div>
+			<div class = "box_wrapper"><div class = "crossword_box" onclick="//pickLetter(4,2)"></div></div>
+			<div class = "box_wrapper"><p class = "answer_number">4.</p><div class = "crossword_box" onclick="//pickLetter(0,3)"></div></div>
+			<div class = "box_wrapper"><div class = "crossword_box" onclick="//pickLetter(1,3)"></div></div>
+			<div class = "box_wrapper"><div class = "crossword_box" onclick="//pickLetter(2,3)"></div></div>
+			<div class = "box_wrapper"><div class = "crossword_box" onclick="//pickLetter(3,3)"></div></div>
+			<div class = "box_wrapper"><div class = "crossword_box" onclick="//pickLetter(4,3)"></div></div>
+			<div class = "box_wrapper"><p class = "answer_number">5.</p><div class = "crossword_box" onclick="//pickLetter(0,4)"></div></div>
+			<div class = "box_wrapper"><div class = "crossword_box" onclick="//pickLetter(1,4)"></div></div>
+			<div class = "box_wrapper"><div class = "crossword_box" onclick="//pickLetter(2,4)"></div></div>
+			<div class = "box_wrapper"><div class = "crossword_box" onclick="//pickLetter(3,4)"></div></div>
+			<div class = "box_wrapper"><div class = "crossword_box" onclick="//pickLetter(4,4)"></div></div>
 		</div>
 		<div id = "clues">
 			<b><h2>Across</h2></b>
-			<p class = "clue active"><b>1.</b> </p>
-			<p class = "clue"><b>2.</b> </p>
-			<p class = "clue"><b>3.</b> </p>
-			<p class = "clue"><b>4.</b> </p>
-			<p class = "clue"><b>5.</b> </p>
-			<b><h2>Down</h2></b>
-			<p class = "clue"><b>1.</b> </p>
-			<p class = "clue"><b>2.</b> </p>
-			<p class = "clue"><b>3.</b> </p>
-			<p class = "clue"><b>4.</b> </p>
-			<p class = "clue"><b>5.</b> </p>
+			<div class = "clue active"><b>1.</b> </div>
+			<div class = "clue"><b>2.</b> </div>
+			<div class = "clue"><b>3.</b> </div>
+			<div class = "clue"><b>4.</b> </div>
+			<div class = "clue"><b>5.</b> </div>
+			<div><h2>Down</h2></b>
+			<div class = "clue"><b>1.</b> </div>
+			<div class = "clue"><b>2.</b> </div>
+			<div class = "clue"><b>3.</b> </div>
+			<div class = "clue"><b>4.</b> </div>
+			<div class = "clue"><b>5.</b> </div>
 		</div>
 	</div>
 </body>
@@ -218,75 +232,6 @@
 		]
 
 	};
-
-	/*let generateGrid = () => {
-		let sections = Math.random() < 0.5 ? sections_cw : sections_ccw;
-		let symmetry = Math.random() < 0.5 ? 0 : 1; // 0 = two-way, 1 = four-way symmetry
-		let parity = Math.random() < 0.5 ? 0 : 1; // 0 = even quadrants, 1 = odd quadrants
-		let exclusions = Math.floor(Math.random() * 4); if(exclusions == 2) {symmetry = 0;} // 0, 1, 3, or 4 exclusions (not 2 to avoid two-letter word lengths)
-
-		for(let quadrant = 0; quadrant < sections.length; quadrant++) {
-
-			let color = "rgb("+Math.floor(Math.random()*256)+","+Math.floor(Math.random()*256)+","+Math.floor(Math.random()*256)+")";
-
-			for(let box_index = 0; box_index < sections[quadrant].length; box_index++) {
-				let x = sections[quadrant][box_index].x;
-				let y = sections[quadrant][box_index].y;
-				let box = crossword.grid[x][y].element;
-
-				if(((symmetry == 1 || quadrant % 2 == parity) && box_index < exclusions) || (box_index == 0 && exclusions == 3)) { // this quadrant will have some exclusions in it AND this box is an exclusion
-					box.classList.add("disabled");
-					crossword.grid[x][y].valid = 0;
-				}
-				else {
-					//box.style = "background:"+color+";";
-					crossword.grid[x][y].valid = 1;
-				}
-			}
-		}
-	}*/
-
-	//generateGrid();
-
-	/*let locateWords = (grid) => {
-		let words = {"across": [], "down": []};
-		for(let y = 0; y < crossword.grid[0].length; y++) {
-			for(let x = 0; x < crossword.grid.length; x++) {
-				let box = crossword.grid[x][y];
-				console.log(box);
-			}
-		}
-		for(let current_index = 0; current_index < grid.length; current_index++) {
-			if(grid[current_index] === 0) continue; // excluded square, skip it
-
-			let x = current_index % 5; // 0 to 4 across
-			let y = Math.floor(current_index / 5); // 0 to 4 down
-			if(grid[current_index - 1] === 0) {} //handle across
-		}
-		return words;
-	}*/
-
-	/*let generateSolution = (grid) => {
-		let possible_words = five_letter_words;
-
-		for(let i = 0; i < grid.length; i++) { //test across words
-			for(let j = 0; j < grid[i].length; j++) {
-				possible_words.filter(word => (word[0] == grid[0] || grid[0])  )
-			}
-		}
-		let current_index = 0;
-		let solution_complete = 0;
-		while(!solution_complete) {
-			if(grid[current_index] === 1) { // valid and unoccupied square, generate word/letters for it
-
-			} else {
-				current_index++; //idea: start with a word and generate a crossword around that word instead of generating words around a crossword
-			}
-		}
-	}*/
-
-	/*let generateSolution = (grid, index, direction) => { //grid, index, "across" or "down"
-	}*/
 
 	five_letter_words = Object.keys(clues);
 	let crossword = [
@@ -390,14 +335,6 @@
 	}
 
 	let isComplete = (grid) => {
-		/*for(let word_index = 0; word_index < grid.length; word_index++) {
-			for(let letter_index = 0; letter_index < grid[word_index].letters.length; letter_index++) {
-				if(grid[word_index].letters[letter_index].innerText == "") {
-					return false;
-				}
-			}
-		}
-		return true;*/
 		for(let word_index = 0; word_index < grid.length; word_index++) {
 			let word = grid[word_index].solution_space[0];
 			let real_word = grid[word_index].letters[0].solution + grid[word_index].letters[1].solution + grid[word_index].letters[2].solution + grid[word_index].letters[3].solution + grid[word_index].letters[4].solution;
@@ -540,8 +477,10 @@
 	for(let word_index = 0; word_index < clue_elements.length; word_index++) {
 		let answer = crossword[word_index].solution_space[0];
 		let possible_clues = clues[answer];
+		clue_elements[word_index].possible_clues = possible_clues;
+		let chosen_clue = possible_clues[Math.floor(Math.random() * possible_clues.length)];
 		//clues[word_index].innerHTML = clues[word_index].innerHTML + definitions[crossword[word_index].solution_space[0]];
-		clue_elements[word_index].innerHTML = clue_elements[word_index].innerHTML + possible_clues[Math.floor(Math.random() * possible_clues.length)];
+		clue_elements[word_index].innerHTML = clue_elements[word_index].innerHTML + chosen_clue[0] + " (" + chosen_clue[1] + ", " + chosen_clue[2] + ")";
 	}
 
 	//end of setting up the crossword
@@ -551,6 +490,7 @@
 		"x": 0,
 		"y": 0,
 		"direction": "across",
+		"shifting": false,
 
 		"increment": function(direction, amount) {
 			if(direction != this.direction) {
@@ -759,7 +699,11 @@
 				this.increment(this.direction,1);
 			}
 
-			if(input == "enter") {
+			if(input == "shift") {
+				this.shifting = true;
+			}
+
+			if(input == "enter" && !this.shifting) {
 				if(this.direction == "across" && this.y < 4) {
 					this.increment("down",1);
 					this.x = 0;
@@ -774,6 +718,27 @@
 					this.y = 0;
 				}
 				else if(this.direction == "down" && this.x == 4) {
+					this.toggle_direction();
+					this.x = 0;
+					this.y = 0;
+				}
+			}
+
+			if(input == "enter" && this.shifting) {
+				if(this.direction == "across" && this.y > 0) {
+					this.increment("down",-1);
+					this.x = 0;
+				}
+				else if(this.direction == "across" && this.y == 0) {
+					this.toggle_direction();
+					this.x = 0;
+					this.y = 0;
+				}
+				else if (this.direction == "down" && this.x > 0) {
+					this.increment("across",-1);
+					this.y = 0;
+				}
+				else if(this.direction == "down" && this.x == 0) {
 					this.toggle_direction();
 					this.x = 0;
 					this.y = 0;
@@ -857,6 +822,13 @@
 		}
 		let data = event.key.toLowerCase();
 		handleInput(data);
+	});
+
+	window.addEventListener("keyup", (event) => {
+		if(event.key.toLowerCase() == "shift") {
+			console.log("unshift");
+			controller.shifting = false;
+		}
 	});
 
 	/*let timer = {
